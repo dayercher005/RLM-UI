@@ -1,11 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { HashRouter, Route } from 'react-router-dom'
+import Auth from './pages/auth.tsx'
+import App from './pages/App.tsx'
+import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Route path="/sign-up" Component={ Auth }></Route>
+      <Route path="/" Component={ App }></Route>
+    </HashRouter>
   </React.StrictMode>,
 )
 
