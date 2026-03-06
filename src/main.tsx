@@ -1,15 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './pages/login.tsx'
-import App from './pages/App.tsx'
+import App from './pages/main.tsx'
 import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
-      <Route path="/log-in" Component={ LoginPage }></Route>
-      <Route path="/" Component={ App }></Route>
+      <Routes>
+        <Route path="/log-in" Component={ LoginPage }></Route>
+        <Route path="/" Component={ App }></Route>
+      </Routes>
     </HashRouter>
   </React.StrictMode>,
 )

@@ -42,6 +42,15 @@ export function LoginForm({
             />
           </Field>
           <Field>
+            <Field>
+            <FieldLabel htmlFor="email">Password</FieldLabel>
+            <Input
+              id="password"
+              type="password"
+              required
+            />
+          </Field>
+          <Field></Field>
             <Button type="submit">Login</Button>
           </Field>
           <FieldSeparator>Or</FieldSeparator>
