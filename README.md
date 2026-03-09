@@ -63,14 +63,18 @@ A User-Interface for a RLM engine.
 
 ## How to Run:
 
+1. Clone the repository
+```bash
+git clone https://github.com/dayercher005/RLM-UI.git
+```
 
-1. Install dependencies:
+2. Install dependencies:
 ```bash
 npm i
 ```
 
 
-2. Run Development Server:
+3. Run Development Server:
 ```bash
 npm run dev
 ```
