@@ -1,7 +1,6 @@
 "use client"
 import * as React from "react"
 import {
-  BookOpen,
   Settings2,
   SquareTerminal,
 } from "lucide-react"
@@ -24,7 +23,7 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Chat History",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
@@ -44,35 +43,12 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-      ],
-    },
-    {
       title: "Settings",
       url: "#",
       icon: Settings2,
       items: [
         {
           title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
           url: "#",
         },
         {
@@ -97,7 +73,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser/>
+        <NavUser user={data.user}/>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

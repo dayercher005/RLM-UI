@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { Plus, ChevronRight, type LucideIcon } from "lucide-react"
 
 import {
   Collapsible,
@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/collapsible"
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -33,8 +32,16 @@ export function NavMain({
   }[]
 }) {
   return (
+
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarMenu>
+        <SidebarMenuItem className="py-5">
+          <SidebarMenuButton>
+            <Plus />
+            New Chat
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
