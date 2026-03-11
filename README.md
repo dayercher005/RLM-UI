@@ -59,23 +59,23 @@ A User-Interface for a RLM engine.
  ## System Architecture
 
  ```mermaid
-    ---
-    config: 
-        theme: 'dark'
-    ---
+---
+config: 
+    theme: 'dark'
+---
 
-    graph TB
-        Frontend[RLM UI]
-        API[RLM Server]
-        Database[(SQlite Database)]
-        Authentication[Auth0]
-        Engine[RLM Engine]
-        
-        Frontend --> |HTTP Requests| API
-        API -->|Authentication| Authentication
-        API -->|Database Queries| Database
-        API -->|HTTP Responses| Frontend
-        API -->|HTTP Requests| Engine
+graph TB
+    Frontend[RLM UI]
+    API[RLM Server]
+    Database[(SQlite Database)]
+    Authentication[Auth0]
+    Engine[RLM Engine]
+    
+    Frontend --> |HTTP Requests| API
+    API -->|Authentication| Authentication
+    API -->|Database Queries| Database
+    API -->|HTTP Responses| Frontend
+    API -->|HTTP Requests| Engine
 
  ```
 
