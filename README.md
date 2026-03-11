@@ -75,8 +75,6 @@ A User-Interface for a RLM engine.
         group frontend(internet)[UI]
 
         service frontend(internet)[Frontend]
-
-        frontend:B -- T:server
  ```
 
  ---
