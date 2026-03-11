@@ -60,21 +60,24 @@ A User-Interface for a RLM engine.
 
  ```mermaid
 
-    architecture-beta
-        group api(cloud)[API]
+    ---
+    config: 
+        theme: 'dark'
+    ---
 
-        service db(database)[Database] in api
-        service auth(authentication)[Authentication] in api
-        service engine(disk)[RLM Engine] in api
-        service server(server)[Server] in api
+    graph TB
+        Frontend[RLM UI]
+        API[RLM Server]
+        Database[(SQlite Database)]
+        Authentication[Auth0]
+        Engine[RLM Engine]
+        
+        Frontend --> |HTTP Requests| API
+        API -->|Authentication| Authentication
+        API -->|Database Queries| Database
+        API -->|HTTP Responses| Frontend
+        API -->|HTTP Requests| Engine
 
-        db:L -- R:server
-        auth:T -- B:server
-        engine:R -- L:server
-
-        group frontend(internet)[UI]
-
-        service frontend(internet)[Frontend] in frontend
  ```
 
  ---
