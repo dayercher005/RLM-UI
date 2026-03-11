@@ -54,6 +54,33 @@ A User-Interface for a RLM engine.
 └── vite.config.ts
  ```
 
+ ---
+
+ ## System Architecture
+
+ ```mermaid
+
+    architecture-beta
+        group api(cloud)[API]
+
+        service db(database)[Database] in api
+        service auth(authentication)[Authentication] in api
+        service engine(disk)[RLM Engine] in api
+        service server(server)[Server] in api
+
+        db:L -- R:server
+        auth:T -- B:server
+        engine:R -- L:server
+
+        group frontend(internet)[UI]
+
+        service frontend(internet)[Frontend]
+
+        frontend:B -- T:server
+ ```
+
+ ---
+
 ## 🛠️ Tech Stack:
 ![React](https://img.shields.io/badge/React-_?style=for-the-badge&logo=React&logoColor=%2361DAFB&labelColor=black&color=%2361DAFB)
 ![Electron](https://img.shields.io/badge/Electron-_?style=for-the-badge&logo=Electron&logoColor=%2347848F&labelColor=black&color=%2347848F)
