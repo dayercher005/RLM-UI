@@ -59,7 +59,6 @@ A User-Interface for a RLM engine.
  ## System Architecture
 
  ```mermaid
-
     ---
     config: 
         theme: 'dark'
