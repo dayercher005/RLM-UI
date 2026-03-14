@@ -76,7 +76,7 @@ graph TB
     API -->|Database Queries| Database
     API -->|HTTP Responses| Frontend
     API -->|HTTP Requests| Engine
-
+    Engine -->|HTTP Response| API
  ```
 
  ---
@@ -97,7 +97,7 @@ git clone https://github.com/dayercher005/RLM-UI.git
 
 2. Install dependencies:
 ```bash
-npm i
+npm install
 ```
 
 
